@@ -1,8 +1,8 @@
 {
-  "27171": {
-    "ID": 27171,
+  "20425": {
+    "ID": 20425,
     "Name": "Judgement of Command",
-    "Rank": 6,
+    "Rank": 1,
     "Target": "Enemy",
     "Effects": [
       {
@@ -37,30 +37,6 @@
         "DieSides": 30
       }
     ]
-  },
-
-  "27159": {
-    "ID": 27159,
-    "Name": "Judgement of the Crusader",
-    "Rank": 7,
-    "Target": "Enemy",
-    "Aura": {
-      "IsDebuff": true,
-      "Effects": [
-        {
-          "EffectType": "ModDamageTaken",
-          "School": "Holy",
-          "Value": 219
-        },
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "IncreasedAttackerCritChance"
-          ],
-          "Value": 0
-        }
-      ]
-    }
   },
 
   "27166": {

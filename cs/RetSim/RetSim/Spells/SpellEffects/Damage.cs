@@ -7,10 +7,14 @@ using RetSim.Units.UnitStats;
 
 namespace RetSim.Spells.SpellEffects;
 
+// TODO: Add Stack Multiplier
 public class Damage : SpellEffect
 {
     public School School { get; init; }
-    public float Coefficient { get; init; }
+    public float SpellCoef { get; set; }
+
+    public float AttackPowerCoef { get; set; }
+    //public float Coefficient { get; init; }
 
     public DefenseType DefenseCategory { get; init; }
     public AttackCategory CritCategory { get; init; }
@@ -20,10 +24,11 @@ public class Damage : SpellEffect
     public ProcMask OnHit { get; init; }
     public ProcMask OnCrit { get; init; }
 
-    public Damage(float value, float dieSides, School school, float coefficient, DefenseType defense, AttackCategory crit, bool ignoresDefense, ProcMask onCast, ProcMask onHit, ProcMask onCrit) : base(value, dieSides)
+    public Damage(float value, float dieSides, School school, float spCoef, float apCoef, DefenseType defense, AttackCategory crit, bool ignoresDefense, ProcMask onCast, ProcMask onHit, ProcMask onCrit) : base(value, dieSides)
     {
         School = school;
-        Coefficient = coefficient;
+        SpellCoef = spCoef;
+        AttackPowerCoef = apCoef;
         DefenseCategory = defense;
         CritCategory = crit;
         IgnoresDefenses = ignoresDefense;
@@ -39,11 +44,21 @@ public class Damage : SpellEffect
 
     public virtual float GetSpellPowerBonus(Player player, SpellState state)
     {
-        if (Coefficient == 0)
+        if (SpellCoef == 0)
             return 0;
 
         else
-            return Coefficient * (player.Stats[StatName.SpellPower].Value + state.BonusSpellPower);
+            return SpellCoef * (player.Stats[StatName.SpellPower].Value + state.BonusSpellPower);
+    }
+
+    public virtual float GetAttackPowerBonus(Player player, SpellState state)
+    {
+        if(AttackPowerCoef == 0)
+        {
+            return 0;
+        }
+
+        return AttackPowerCoef * (player.Stats[StatName.AttackPower].Value + state.BonusAttackPower);
     }
 
     public virtual float CalculateDamage(Player player, Attack attack, SpellState state)
@@ -57,7 +72,7 @@ public class Damage : SpellEffect
 
         EffectBonus bonus = state.EffectBonuses[state.Spell.Effects.IndexOf(this)];
 
-        return (GetBaseDamage(player, state) + GetSpellPowerBonus(player, state) + bonus.Flat) * bonus.Percent * schoolMultiplier;
+        return (GetBaseDamage(player, state) + GetSpellPowerBonus(player, state) + GetAttackPowerBonus(player, state) + bonus.Flat) * bonus.Percent * schoolMultiplier;
     }
 
     public override ProcMask Resolve(FightSimulation fight, SpellState state)

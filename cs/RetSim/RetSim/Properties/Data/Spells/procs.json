@@ -9,8 +9,8 @@
   },
   "2": {
     "ID": 2,
-    "Name": "Seal of Blood",
-    "SpellID": 31893,
+    "Name": "Seal of Vengance",
+    "SpellID": 31804,
     "ProcMask": 14,
     "GuaranteedProc": true
   },
@@ -35,27 +35,27 @@
     "ProcMask": 1,
     "GuaranteedProc": true
   },
-  "6": {
-    "ID": 6,
-    "Name": "Vengeance (Rank 4)",
-    "SpellID": 20054,
-    "ProcMask": 1,
-    "GuaranteedProc": true
-  },
-  "7": {
-    "ID": 7,
-    "Name": "Vengeance (Rank 5)",
-    "SpellID": 20055,
-    "ProcMask": 1,
-    "GuaranteedProc": true
-  },
-  "8": {
-    "ID": 8,
-    "Name": "Windfury Attack",
-    "SpellID": 25584,
-    "ProcMask": 2,
-    "Chance": 20
-  },
+  //"6": {
+  //  "ID": 6,
+  //  "Name": "Vengeance (Rank 4)",
+  //  "SpellID": 20054,
+  //  "ProcMask": 1,
+  //  "GuaranteedProc": true
+  //},
+  //"7": {
+  //  "ID": 7,
+  //  "Name": "Vengeance (Rank 5)",
+  //  "SpellID": 20055,
+  //  "ProcMask": 1,
+  //  "GuaranteedProc": true
+  //},
+  //"8": {
+  //  "ID": 8,
+  //  "Name": "Windfury Attack",
+  //  "SpellID": 25584,
+  //  "ProcMask": 2,
+  //  "Chance": 20
+  //},
   "9": {
     "ID": 9,
     "Name": "Crusader's Command",
@@ -316,13 +316,18 @@
     "ProcMask": 6,
     "PPM": 10
   },
-  "44": {
-    "ID": 44,
-    "Name": "Righteous Weapon Coating",
-    "SpellID": 45401,
-    "ProcMask": 94,
-    "Chance":  15,
-    "Cooldown": 45000
+  "144": {
+    "ID": 144,
+    "Name": "The Art of War (Rank 1)",
+    "SpellID": 53489,
+    "OnMeleeCrit": true
+  },
+  "145": {
+    "ID": 145,
+    "Name": "The Art of War (Rank 2)",
+    "SpellID": 59578,
+    "OnMeleeCrit": true
   }
+
 }
 

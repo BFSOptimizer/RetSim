@@ -17,23 +17,23 @@
     ]
   },
 
-  "2": {
-    "ID": 2,
-    "Name": "Melee (Windfury)",
-    "Target": "Enemy",
-    "Effects": [
-      {
-        "EffectType": "WeaponAttack",
-        "School": "Physical",
-        "DefenseCategory": "White",
-        "CritCategory": "Physical",
-        "OnCast": 0,
-        "OnHit": 4,
-        "OnCrit": 33,
-        "Value": 1
-      }
-    ]
-  },
+  //"2": {
+  //  "ID": 2,
+  //  "Name": "Melee (Windfury)",
+  //  "Target": "Enemy",
+  //  "Effects": [
+  //    {
+  //      "EffectType": "WeaponAttack",
+  //      "School": "Physical",
+  //      "DefenseCategory": "White",
+  //      "CritCategory": "Physical",
+  //      "OnCast": 0,
+  //      "OnHit": 4,
+  //      "OnCrit": 33,
+  //      "Value": 1
+  //    }
+  //  ]
+  //},
 
   "3": {
     "ID": 3,
@@ -104,40 +104,6 @@
     }
   },
 
-  "20054": {
-    "ID": 20054,
-    "Name": "Vengeance",
-    "Rank": 4,
-    "Aura": {
-      "Duration": 30000,
-      "MaxStacks": 3,
-      "Effects": [
-        {
-          "EffectType": "ModDamageDone",
-          "SchoolMask": 3,
-          "Value": 4
-        }
-      ]
-    }
-  },
-
-  "20055": {
-    "ID": 20055,
-    "Name": "Vengeance",
-    "Rank": 5,
-    "Aura": {
-      "Duration": 30000,
-      "MaxStacks": 3,
-      "Effects": [
-        {
-          "EffectType": "ModDamageDone",
-          "SchoolMask": 3,
-          "Value": 5
-        }
-      ]
-    }
-  },
-
   "20271": {
     "ID": 20271,
     "Name": "Judgement",
@@ -165,7 +131,7 @@
         "OnCast": 0,
         "OnHit": 8,
         "OnCrit": 33,
-        "Value": 0.7
+        "Value": 0.36
       }
     ]
   },
@@ -203,9 +169,9 @@
     }
   },
 
-  "31893": {
-    "ID": 31893,
-    "Name": "Seal of Blood",
+  "31801": {
+    "ID": 31801,
+    "Name": "Seal of Vengeance",
     "Target": "Enemy",
     "Effects": [
       {
@@ -213,6 +179,45 @@
         "School": "Holy",
         "DefenseCategory": "Special",
         "CritCategory": "Physical",
+        "OnCast": 0,
+        "OnHit": 0,
+        "OnCrit": 1,
+        "Value": 0.33
+      }
+    ]
+  },
+  // TODO: Stacks may not actually be implemented?
+  "31803": {
+    "ID": 31803,
+    "Name": "Holy Vengeance",
+    "Target": "Enemy",
+    "MaxStacks": 5,
+    "Effects": [
+      {
+        "EffectType": "PeriodicDamage",
+        "School": "Holy",
+        "DefenseCategory": "Special",
+        "SpellID": 318030,
+        "OnCast": 0,
+        "OnHit": 0,
+        "OnCrit": 1,
+        "Value": 0.35
+      }
+    ]
+  },
+  "318030": {
+    "ID": 318030,
+    "Name": "Holy Vengeance Dot",
+    "Target": "Enemy",
+    "MaxStacks": 5,
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Holy",
+        "SpCoefficient": 0.013,
+        "ApCoefficient": 0.025,
+        "DefenseCategory": "Special",
+        "StackMultiplier": true,
         "OnCast": 0,
         "OnHit": 0,
         "OnCrit": 1,
@@ -241,6 +246,31 @@
         "OnCast": 0,
         "OnHit": 16,
         "OnCrit": 33,
+        "Value": 0.75
+      }
+    ]
+  },
+
+  "53385": {
+    "ID": 53385,
+    "Name": "Divine Storm",
+    "ManaCostPercent": 12,
+    "Cooldown": 10000,
+    "GCD": {
+      "Duration": 1500,
+      "Category": "Physical"
+    },
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "WeaponAttack",
+        "Normalized": true,
+        "School": "Physical",
+        "DefenseCategory": "Special",
+        "CritCategory": "Physical",
+        "OnCast": 0,
+        "OnHit": 16,
+        "OnCrit": 33,
         "Value": 1.1
       }
     ]
@@ -250,6 +280,7 @@
     "ID": 27138,
     "Name": "Exorcism",
     "Rank": 7,
+    "ManaCostPercent": 12,
     "ManaCost": 340,
     "Cooldown": 15000,
     "GCD": {
@@ -261,7 +292,8 @@
       {
         "EffectType": "Damage",
         "School": "Holy",
-        "Coefficient": 0.429,
+        "SpCoefficient": 0.15,
+        "ApCoefficient": 0.15,
         "DefenseCategory": "Magic",
         "CritCategory": "Spell",
         "OnCast": 0,
@@ -289,7 +321,7 @@
         "EffectType": "PeriodicDamage",
         "SpellID": 271730,
         "Ticks": 8,
-        "Interval":  1000,
+        "Interval": 1000,
         "School": "Holy",
         "DefenseCategory": "Magic",
         "OnCast": 0,
@@ -308,13 +340,14 @@
       {
         "EffectType": "Damage",
         "School": "Holy",
-        "Coefficient": 0.119,
+        "SpCoefficient": 0.04,
+        "ApCoefficient": 0.04,
         "DefenseCategory": "Magic",
         "CritCategory": "None",
         "OnCast": 0,
         "OnHit": 0,
         "OnCrit": 0,
-        "Value": 64,
+        "Value": 72,
         "DieSides": 0
       }
     ]

@@ -234,6 +234,11 @@
             "Elemental"
           ],
           "Value": 1
+        },
+        {
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 1,
+          "Value": 1
         }
       ]
     }
@@ -255,6 +260,11 @@
             "Elemental"
           ],
           "Value": 2
+        },
+        {
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 1,
+          "Value": 2
         }
       ]
     }
@@ -275,6 +285,11 @@
             "Undead",
             "Elemental"
           ],
+          "Value": 3
+        },
+        {
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 1,
           "Value": 3
         }
       ]
@@ -326,50 +341,6 @@
     }
   },
 
-  "20218": {
-    "ID": 20218,
-    "Name": "Sanctity Aura",
-    "Aura": {
-      "Effects": [
-        {
-          "EffectType": "ModDamageDone",
-          "SchoolMask": 2,
-          "Value": 10
-        }
-      ]
-    }
-  },
-
-  "31869": {
-    "ID": 31869,
-    "Name": "Improved Sanctity Aura",
-    "Rank": 1,
-    "Aura": {
-      "Effects": [
-        {
-          "EffectType": "ModDamageDone",
-          "SchoolMask": 127,
-          "Value": 1
-        }
-      ]
-    }
-  },
-
-  "31870": {
-    "ID": 31870,
-    "Name": "Improved Sanctity Aura",
-    "Rank": 2,
-    "Aura": {
-      "Effects": [
-        {
-          "EffectType": "ModDamageDone",
-          "SchoolMask": 127,
-          "Value": 2
-        }
-      ]
-    }
-  },
-
   "20049": {
     "ID": 20049,
     "Name": "Vengeance",
@@ -415,39 +386,9 @@
     }
   },
 
-  "20058": {
-    "ID": 20058,
-    "Name": "Vengeance",
-    "Rank": 4,
-    "Aura": {
-
-      "Effects": [
-        {
-          "EffectType": "GainProc",
-          "Value": 6
-        }
-      ]
-    }
-  },
-
-  "20059": {
-    "ID": 20059,
-    "Name": "Vengeance",
-    "Rank": 5,
-    "Aura": {
-
-      "Effects": [
-        {
-          "EffectType": "GainProc",
-          "Value": 7
-        }
-      ]
-    }
-  },
-
   "32043": {
     "ID": 32043,
-    "Name": "Sanctified Seals",
+    "Name": "Sanctity of Battle",
     "Rank": 1,
     "Aura": {
       "Effects": [
@@ -458,14 +399,31 @@
             "SpellCrit"
           ],
           "Value": 1
+        },
+        {
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            35395,
+            879,
+            5614,
+            5615,
+            10312,
+            10313,
+            10314,
+            27138,
+            48800,
+            48801
+          ],
+          "Effect1": 5
         }
+
       ]
     }
   },
 
   "35396": {
     "ID": 35396,
-    "Name": "Sanctified Seals",
+    "Name": "Sanctity of Battle",
     "Rank": 2,
     "Aura": {
       "Effects": [
@@ -476,6 +434,22 @@
             "SpellCrit"
           ],
           "Value": 2
+        },
+        {
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            35395,
+            879,
+            5614,
+            5615,
+            10312,
+            10313,
+            10314,
+            27138,
+            48800,
+            48801
+          ],
+          "Effect1": 10
         }
       ]
     }
@@ -484,7 +458,7 @@
 
   "35397": {
     "ID": 35397,
-    "Name": "Sanctified Seals",
+    "Name": "Sanctity of Battle",
     "Rank": 3,
     "Aura": {
       "Effects": [
@@ -495,6 +469,67 @@
             "SpellCrit"
           ],
           "Value": 3
+        },
+        {
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            35395,
+            879,
+            5614,
+            5615,
+            10312,
+            10313,
+            10314,
+            27138,
+            48800,
+            48801
+          ],
+          "Effect1": 15
+        }
+      ]
+    }
+  },
+
+  //todo
+  "53486": {
+    "ID": 53486,
+    "Name": "Art of War",
+    "Rank": 1,
+    "Aura": {
+      "Effects": [
+        { // this needs correction
+          "EffectType": "ModSpell",
+          "Spells": [
+            27171,
+            31898
+          ],
+          "CritChance": 3
+        },
+        {
+          "EffectType": "GainProc",
+          "Value": 144
+        }
+      ]
+    }
+  },
+  //todo
+  "53488": {
+    "ID": 53488,
+    "Name": "Art of War",
+    "Rank": 2,
+    "Aura": {
+      "Effects": [
+        { // this needs correction
+          "EffectType": "ModSpell",
+          "Spells": [
+            27171,
+            31898
+          ],
+          "CritChance": 3
+        },
+        {
+          "EffectType": "GainProc",
+          "Value": 145
         }
       ]
     }
@@ -512,7 +547,7 @@
             27171,
             31898
           ],
-          "CritChance": 3
+          "CritChance": 6
         }
       ]
     }
@@ -530,7 +565,7 @@
             27171,
             31898
           ],
-          "CritChance": 6
+          "CritChance": 12
         }
       ]
     }
@@ -548,47 +583,12 @@
             27171,
             31898
           ],
-          "CritChance": 9
+          "CritChance": 18
         }
       ]
     }
   },
 
-  "31882": {
-    "ID": 31882,
-    "Name": "Fanaticism",
-    "Rank": 4,
-    "Aura": {
-      "Effects": [
-        {
-          "EffectType": "ModSpell",
-          "Spells": [
-            27171,
-            31898
-          ],
-          "CritChance": 12
-        }
-      ]
-    }
-  },
-
-  "31883": {
-    "ID": 31883,
-    "Name": "Fanaticism",
-    "Rank": 5,
-    "Aura": {
-      "Effects": [
-        {
-          "EffectType": "ModSpell",
-          "Spells": [
-            27171,
-            31898
-          ],
-          "CritChance": 15
-        }
-      ]
-    }
-  },
 
   "20189": {
     "ID": 20189,
@@ -809,6 +809,23 @@
             "Intellect"
           ],
           "Value": 10
+        }
+      ]
+    }
+  },
+
+  "53375": {
+    "ID": 53375,
+    "Name": "Sanctified Wrath",
+    "Rank": 5,
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStatPercent",
+          "Stats": [
+            "Crit"
+          ],
+          "Value": 1
         }
       ]
     }

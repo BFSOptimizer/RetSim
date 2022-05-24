@@ -19,6 +19,7 @@ public class SpellState
     public EffectBonus[] AuraBonuses { get; set; }
 
     public int BonusSpellPower { get; set; }
+    public int BonusAttackPower { get; set; }
     public float BonusCritChance { get; set; }
 
     public SpellState(Spell spell)
@@ -32,6 +33,7 @@ public class SpellState
         ManaCostReductionPercent = 1f;
 
         BonusSpellPower = 0;
+        BonusAttackPower = 0;
         BonusCritChance = 0f;
 
         if (spell.Effects != null)

@@ -10,6 +10,7 @@ using System.Linq;
 
 namespace RetSim.Spells.SpellEffects;
 
+// todo: Implement "can Crit" functionality for periodic effects"
 public class PeriodicDamage : SpellEffect
 {
     [JsonIgnore]
@@ -18,13 +19,15 @@ public class PeriodicDamage : SpellEffect
     public int Ticks { get; init; }
     public int Interval { get; init; }
 
+    public bool CanCrit { get; init; } = false;
+
     public School School { get; init; }
     public DefenseType DefenseCategory { get; init; }
 
     public ProcMask OnCast { get; init; }
     public ProcMask OnHit { get; init; }
 
-    public PeriodicDamage(float value, float dieSides, int spellID, int ticks, int interval, School school, DefenseType defense, ProcMask onCast, ProcMask onHit) : base(value, dieSides)
+    public PeriodicDamage(float value, float dieSides, int spellID, int ticks, int interval, School school, DefenseType defense, ProcMask onCast, ProcMask onHit, bool canCrit = false) : base(value, dieSides)
     {
         School = school;
         SpellID = spellID;
@@ -33,6 +36,7 @@ public class PeriodicDamage : SpellEffect
         DefenseCategory = defense;
         OnCast = onCast;
         OnHit = onHit;
+        CanCrit = canCrit;
     }
 
     public override ProcMask Resolve(FightSimulation fight, SpellState state)

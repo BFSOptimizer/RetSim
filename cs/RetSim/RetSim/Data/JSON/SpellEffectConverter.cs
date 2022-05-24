@@ -27,7 +27,9 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
                 DefenseType defense = Enum.Parse<DefenseType>((string)jo["DefenseCategory"]);
                 AttackCategory crit = Enum.Parse<AttackCategory>((string)jo["CritCategory"]);
 
-                float coefficient = (float)(jo["Coefficient"] ?? 0);
+                float spellCoef = (float)(jo["SpCoefficient"]);
+                float apCoef = (float)(jo["ApCoefficient"]);
+                //float coefficient = (float)(jo["Coefficient"] ?? 0);
                 bool ignoresDefense = (bool)(jo["IgnoresDefenses"] ?? false);
 
                 ProcMask onCast = (ProcMask)(int)jo["OnCast"];
@@ -51,6 +53,7 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
                 int spellID = (int)jo["SpellID"];
                 int ticks = (int)jo["Ticks"];
                 int interval = (int)jo["Interval"];
+                bool canCrit = (bool)(jo["CanCrit"]);
 
                 School periodicSchool = Enum.Parse<School>((string)jo["School"]);
                 DefenseType periodicDefense = Enum.Parse<DefenseType>((string)jo["DefenseCategory"]);                
